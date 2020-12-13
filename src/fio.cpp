@@ -1,8 +1,8 @@
 #include<cstdio>
 #include<iostream>
 #include "fio.h"
-int main()
+void path_ana(string a)
 {
-    path_ana("qwerty");
-    return 0;
+    std::cout<<a;
+    return;
 }
