@@ -5,7 +5,7 @@
 int main()
 {
     string name;
-    cin>>name;
+    std::cin>>name;
     path_ana(name);
     return 0;
 }
