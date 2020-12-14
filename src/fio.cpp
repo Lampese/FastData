@@ -33,25 +33,3 @@ void gen(string path,int kind,int num,int l,int r)
     fclose(stdout);
     return;
 }
-void path_ana(string a)
-{
-    string path=a;
-    path.append("\\file.txt");
-    freopen(path.c_str(),"r",stdin);
-    string str;
-    getline(std::cin,str);
-    do
-    {
-        if(str.substr(0,3)=="vec")
-            {
-                int t=0;
-                int num=read(str,t);
-                int l=read(str,t);
-                int r=read(str,t);
-                gen(a,1,num,l,r);
-            }
-    }
-    while(getline(std::cin,str));
-    fclose(stdin);
-    return;
-}
