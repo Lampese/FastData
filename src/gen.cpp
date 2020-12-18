@@ -1,15 +1,19 @@
+//生成数据的模块
 #include<cstdio>
 #include<iostream>
 #include "fio.h"
 #include<string>
 using namespace std;
-void path_ana(string a)
+int main()
 {
-    string path=a;
+	string path;
+	freopen("..\\temp\\name.txt","r",stdin);
+    getline(cin,path);
+    fclose(stdin);//从name.txt文件里获取路径
     path.append("\\file.txt");
     freopen(path.c_str(),"r",stdin);
     string str;
-    getline(std::cin,str);
+    getline(cin,str);//逐行获取输入文件的内容
     do
     {
         if(str.substr(0,3)=="vec")
@@ -18,19 +22,11 @@ void path_ana(string a)
             int num=read(str,t);
             int l=read(str,t);
             int r=read(str,t);
-            gen(a,1,num,l,r);
+            gen_vec(num,l,r);
         }
     }
     while(getline(std::cin,str));
     fclose(stdin);
-    return;
-}
-int main()
-{
-	string a;
-	freopen("..\\temp\\name.txt","r",stdin);
-    getline(cin,a);
-    fclose(stdin);
-    path_ana(a);
+    copy(path);
 	return 0;
 }

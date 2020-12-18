@@ -3,5 +3,6 @@
 #include<string>
 using namespace std;
 int read(string str,int &beg);
-void gen(string path,int kind,int num,int l,int r);
+void gen_vec(int num,int l,int r);
+void copy(string path);
 #endif

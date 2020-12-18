@@ -17,19 +17,26 @@ int read(string str,int &beg)
         ch=str[beg++];}
     return w ? ~s+1 : s;
 }
-void gen(string path,int kind,int num,int l,int r)
+void gen_vec(int num,int l,int r)
 {
+    freopen("..\\temp\\dtmp.txt","w",stdout);
+    srand(time(NULL));
+    for(int i=1;i<=num;++i)
+    {
+        int t=rand()%(r-l+1)+l;
+        printf("%d\n",t);
+    }
+    fclose(stdout);
+    return;
+}
+void copy(string path)
+{
+    freopen("..\\temp\\dtmp.txt","r",stdin);
     path.append("\\out.txt");
     freopen(path.c_str(),"w",stdout);
-    if(kind==1)
-    {
-        srand(time(NULL));
-        for(int i=1;i<=num;++i)
-        {
-            int t=rand()%(r-l+1)+l;
-            printf("%d\n",t);
-        }
-    }
+    string str;
+    while(getline(cin,str)) cout<<str<<endl;
+    fclose(stdin);
     fclose(stdout);
     return;
 }
